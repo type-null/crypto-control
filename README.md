@@ -23,11 +23,13 @@ API source code.
           'backtest ratios':  key metrics from backtest
           'backtest df':      raw result table after backtest
      For CUSUM models:
+     
           'score':            k, h score table
           'score plot':       k, h score plots
           'k', 'h':           k, h values
           'CUSUM plot':       CUSUM plot which trading signals based on
      For EWMA models:
+     
           'EWMA plot':        EWMA plot which trading signals based on"
           
 - Backtest results:
