@@ -1,5 +1,5 @@
 """
-Control chart based Trading strategies for crypto market.
+Control charts-based Trading strategies for Cryptocurrency and Stock indices.
 
 Course project - Data Analytics and System Monitoring 2021 Fall
 
@@ -66,7 +66,7 @@ class CusumTrader:
         if doc:
             print(self.funcHelp)
         if ra:
-            self.securities = pd.read_excel("../data/biostocks.xlsx", parse_dates=True, index_col="Dates")
+            self.securities = pd.read_excel("../data/biostocks.xls", parse_dates=True, index_col="Dates")
             self.stocks = self.securities.loc[:, ['NBI Index', 'SPSIBI Index', 'MRNA US Equity']]
             self.traindf, self.testdf = self.trainTestSplit(self.stocks)
             #14 risk adjusted cusum no fee
@@ -228,12 +228,13 @@ class CusumTrader:
         return df
 
     def getScore(self, feature='', method='montgomery', fee=0.5/100):
-        kRange = np.arange(0.0002, 0.0023, step=0.0004)
-        hRange = np.arange(0.0002, 0.0023, step=0.0004)
+        
+        kRange = np.arange(0.001, 0.0023, step=0.0002) # range for the first strategy of k and h: (0.0002, 0.0023, step=0.0004)
+        hRange = np.arange(0.001, 0.0023, step=0.0002) # range for the first strategy of k and h: (0.0002, 0.0023, step=0.0004)
 
         if feature == "residualFeature":
-            kRange = np.arange(0.02, 0.23, step=0.04)
-            hRange = np.arange(0.2, 2.3, step=0.4)
+            kRange = np.arange(0.25, 0.51, step=0.05) # range for the first strategy of k and h: (0.02, 0.23, step=0.04)
+            hRange = np.arange(0.25, 0.51, step=0.05) # range for the first strategy of k and h: (0.2, 2.3, step=0.4)
             df = (self.traindf
                   .pipe(self.applyARIMA)
                   .pipe(self.calculateResidualFeature))
