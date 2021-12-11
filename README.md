@@ -1,7 +1,7 @@
 # Control Chart Based Trading Strategies Selector
 Simulate and backtest 15 models derived from control chart methods (including CUSUM, EWMA, Risk adjusted). Report the key metrics and select the best trading strategy for given cryptocurrency.
 
-## cusumtrader.py
+## [cusumtrader.py](cusumtrader.py)
 API source code.
 
 ### Instructions
@@ -36,13 +36,22 @@ API source code.
 
 ### Example plots
 1. CUSUM plot for generating signals.
-
+    <p align="center">
+        <img src="img/cusum.png" alt="CUSUM plot" width="650"/>
+    </p>
 2. Corresponding trading signal with price plot.
-
+    <p align="center">
+        <img src="img/signal.png" alt="CUSUM plot" width="650"/>
+    </p>
 3. Trading strategy comparison table.
-
+    <p align="center">
+        <img src="img/table.png" alt="CUSUM plot" width="650"/>
+    </p>
 4. Drawdown plot.
-
-## main.ipynb
+    <p align="center">
+        <img src="img/drawdown.png" alt="CUSUM plot" width="650"/>
+    </p>
+    
+## [main.ipynb](main.ipynb)
 
 A simple tutorial for the CUSUMTrader package.
